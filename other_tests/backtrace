@@ -1,0 +1,24 @@
+backtrace
+536871252
+    FAILED seg store
+    reg a holds: 22
+    reg b (r2) holds: 68
+    reg c holds: 21
+3221225520 (load program)
+    loading program from segment [r6]
+    word index 0
+
+==24140== HEAP SUMMARY:
+==24140==     in use at exit: 65,036 bytes in 16,259 blocks
+==24140==   total heap usage: 4,239,742 allocs, 4,223,483 frees, 63,484,476 bytes allocated
+==24140== 
+==24140== LEAK SUMMARY:
+==24140==    definitely lost: 65,036 bytes in 16,259 blocks
+==24140==    indirectly lost: 0 bytes in 0 blocks
+==24140==      possibly lost: 0 bytes in 0 blocks
+==24140==    still reachable: 0 bytes in 0 blocks
+==24140==         suppressed: 0 bytes in 0 blocks
+==24140== Rerun with --leak-check=full to see details of leaked memory
+==24140== 
+==24140== For counts of detected and suppressed errors, rerun with: -v
+==24140== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)

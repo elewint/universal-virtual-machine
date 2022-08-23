@@ -1,0 +1,14 @@
+add.um
+conditional_move.um
+divide.um
+halt-verbose.um
+halt.um
+input.um
+load_prog_full.um
+load_prog_pointer.um
+map_segment.um
+multiply.um
+nand.um
+output.um
+seg_store_load.um
+unmap_segment.um

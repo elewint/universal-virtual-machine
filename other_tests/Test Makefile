@@ -1,0 +1,29 @@
+#
+# Makefile for the UM
+#    Authors:  Eli Intriligator (eintri01), Max Behrendt (mbehre01)
+#    Date:     Nov 23, 2021
+# 
+CC = gcc
+
+IFLAGS  = -I/comp/40/build/include -I/usr/sup/cii40/include/cii
+CFLAGS  = -g -std=gnu99 -Wall -Wextra -Werror -pedantic $(IFLAGS)
+LDFLAGS = -g -L/comp/40/build/lib -L/usr/sup/cii40/lib64
+LDLIBS  = -l40locality -lcii40 -lm -lbitpack
+
+# TODO: remove "test" in final submission
+all: test um
+
+um: um-main.o segment.o instruction.o bitpack.o
+	$(CC) $(LDFLAGS) $^ -o $@ $(LDLIBS)
+
+# TODO: remove test in final submission
+test: umtest.o umtestwrite.o bitpack.o
+	$(CC) $(LDFLAGS) $^ -o $@ $(LDLIBS)
+
+# To get *any* .o file, compile its .c file with the following rule.
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(EXECS)  *.o
+
